@@ -156,6 +156,34 @@ class GuestController extends Controller
         return GuestResource::make($this->guestService->update($request->validated(), $guest));
     }
 
+    /**
+     * @OA\Delete(
+     *     path="/api/guest/{id}",
+     *     tags={"guest"},
+     *     summary="Delete Guest by id",
+     *     @OA\Parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *          description="guest id",
+     *          @OA\Schema(
+     *              type="integer",
+     *              format="int64",
+     *              example=1
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=204,
+     *          description="Guest deleted successfully",
+     *      ),
+     *
+     *     @OA\Response(
+     *          response=404,
+     *          description="Guest not found",
+     *      ),
+     * )
+     */
+
     public function destroy(int $id): bool
     {
         $guest = Guest::findOrFail($id);
