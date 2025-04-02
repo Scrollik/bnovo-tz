@@ -18,7 +18,7 @@ use Illuminate\Foundation\Http\FormRequest;
  *                 @OA\Property(property="lastName", type="string"),
  *                 @OA\Property(property="phone", type="string", default="+79998887766"),
  *                 @OA\Property(property="email", type="string"),
- *                 @OA\Property(property="country", type="string",),
+ *                 @OA\Property(property="country", type="string", default="RU"),
  *             )
  *         }
  *     )
