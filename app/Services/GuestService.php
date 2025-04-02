@@ -9,10 +9,6 @@ use libphonenumber\PhoneNumberUtil;
 
 class GuestService
 {
-    public function __construct(private readonly GuestRepositoryInterface $guestRepository)
-    {
-    }
-
     public function store(array $data): GuestData
     {
         if (empty($data['country'])) {
