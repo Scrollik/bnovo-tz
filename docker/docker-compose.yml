@@ -16,7 +16,6 @@ services:
         build:
             context: .
             dockerfile: php-fpm/Dockerfile
-        user: "1000:1001"
         volumes:
             - ../:/var/www
         depends_on:

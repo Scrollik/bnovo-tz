@@ -13,3 +13,12 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
     --install-dir=/usr/local/bin
 
 WORKDIR /var/www
+
+ARG UID=1000
+ARG GID=1000
+
+RUN groupadd -g ${GID} developers && \
+    useradd -m -u ${UID} -g developers developer
+
+USER ${UID}:${GID}
+
